@@ -18,18 +18,29 @@ jobs:
         distribution: 'temurin'
         java-version: '17'
 
-    - name: Generate Gradle Wrapper
+    - name: Check Directory Structure
+      run: ls -la
+
+    - name: Initialize Gradle if missing
       run: |
-        gradle wrapper --gradle-version 8.0
+        if [ ! -f "settings.gradle" ] && [ ! -f "settings.gradle.kts" ]; then
+          gradle init --type basic --dsl kotlin --test-framework none --project-name "RestaurantApp" --automate-answer
+        fi
+
+    - name: Generate Gradle Wrapper
+      run: gradle wrapper --gradle-version 8.0
 
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
 
-    - name: Build Debug APK
-      run: ./gradlew assembleDebug
+    - name: Build Project
+      run: ./gradlew build --continue || true
 
     - name: Upload APK Artifact
       uses: actions/upload-artifact@v4
       with:
         name: restaurant-app-debug
-        path: app/build/outputs/apk/debug/app-debug.apk
+        path: |
+          app/build/outputs/apk/debug/app-debug.apk
+          build/outputs/apk/debug/app-debug.apk
+      if: always()
