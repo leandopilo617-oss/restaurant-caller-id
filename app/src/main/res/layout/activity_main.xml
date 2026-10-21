@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    android:gravity="center_horizontal"
+    android:background="#F5F6FA">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="نظام دليفري مطعم الحجي"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:textColor="#2C3E50"
+        android:layout_marginBottom="32dp"/>
+
+    <EditText
+        android:id="@+id/etPhone"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:hint="رقم الزبون (يتعبأ تلقائياً عند الاتصال)"
+        android:inputType="phone"
+        android:textSize="18sp"
+        android:background="#FFFFFF"
+        android:padding="12dp"
+        android:layout_marginBottom="16dp"/>
+
+    <EditText
+        android:id="@+id/etName"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:hint="اسم الزبون"
+        android:textSize="18sp"
+        android:background="#FFFFFF"
+        android:padding="12dp"
+        android:layout_marginBottom="16dp"/>
+
+    <EditText
+        android:id="@+id/etAddress"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:hint="العنوان / المنطقة"
+        android:textSize="18sp"
+        android:background="#FFFFFF"
+        android:padding="12dp"
+        android:layout_marginBottom="16dp"/>
+
+    <EditText
+        android:id="@+id/etOrder"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:hint="تفاصيل الطلب (الوجبات والكميات)"
+        android:gravity="top"
+        android:textSize="18sp"
+        android:background="#FFFFFF"
+        android:padding="12dp"
+        android:layout_marginBottom="24dp"/>
+
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:text="حفظ وطباعة الطلب"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:backgroundTint="#27AE60"
+        android:textColor="#FFFFFF"/>
+
+</LinearLayout>
